@@ -28,7 +28,6 @@ public class MeteoriteMovement : MonoBehaviour
     private void SetSpeed(float speed)
     {
         _meteoriteSpeed = speed;
-        Debug.LogWarning(speed);
     }
     
     private const float _beta = 30f; // the logistic function is 0.5 (the middle) for this value

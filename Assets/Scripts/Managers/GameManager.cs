@@ -34,7 +34,7 @@ public class GameManager : Singleton<GameManager>
                 {
                     PauseGame();
                 }
-                if (isGamePaused && Input.GetKeyDown(pauseKey))
+                else if (isGamePaused && Input.GetKeyDown(pauseKey))
                 {
                     UnpauseGame();
                 }
@@ -43,8 +43,8 @@ public class GameManager : Singleton<GameManager>
 
     private void UnpauseGame()
     {
-        //if (PauseMenu.Instance != null) PauseMenu.Instance.OnResumePressed();
         isGamePaused = false;
+        if (PauseMenu.Instance != null) PauseMenu.Instance.OnResumePressed();
     }
 
     private void PauseGame()
@@ -52,11 +52,8 @@ public class GameManager : Singleton<GameManager>
         if (MenuManager.Instance != null && PauseMenu.Instance != null)
         {
             isGamePaused = true;
-            //Debug.LogWarning(isGamePaused);
             Time.timeScale = 0;
-            //Debug.LogWarning(Time.timeScale);
             MenuManager.Instance.OpenMenu(PauseMenu.Instance);
-            //Debug.LogWarning("I oppened the pause Menu");
         }
     
     }

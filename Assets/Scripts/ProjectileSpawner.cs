@@ -39,7 +39,6 @@ public class ProjectileSpawner : MonoBehaviour
             random = Random.Range(1, numberOfAngles + 1);
         } while (random == _previousRandom);
 
-        Debug.LogWarning(random);
         _previousRandom = random;
 
         float angle = random * 2 * Mathf.PI / numberOfAngles;
