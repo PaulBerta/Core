@@ -85,15 +85,16 @@ public class GameManager : Singleton<GameManager>
         if (_highScoreSO.Value < _scoreSO.Value)
         {
             _highScoreSO.Value = _scoreSO.Value;
+            PlayFabManager.Instance.SendLeaderboard((int)(_scoreSO.Value * 10));
         } 
                
         Time.timeScale = 0;
 
         if (MenuManager.Instance != null && GameOverMenu.Instance != null)
-        {
-          MenuManager.Instance.OpenMenu(GameOverMenu.Instance);
-          GameOverMenu.Instance.UpdateFinalScore();
-          GameOverMenu.Instance.UpdateHighScore();
+        {   
+            MenuManager.Instance.OpenMenu(GameOverMenu.Instance);
+            GameOverMenu.Instance.UpdateFinalScore();
+            GameOverMenu.Instance.UpdateHighScore();
         }
     }
 

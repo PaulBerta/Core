@@ -35,7 +35,7 @@ namespace LevelManagement
 
         public void OnLeaderboardPressed()
         {
-          //To-Do: Leaderboard Menu
+            LeaderboardMenu.Open();
         }
 
         public override void OnBackPressed()

@@ -170,6 +170,7 @@ MonoBehaviour:
   _settingsMenuPrefab: {fileID: -5159437887211051175, guid: d5380555fbff7c84f94fdb7b2f33acce, type: 3}
   _pauseMenuPrefab: {fileID: 7074650395119423632, guid: 9fd3398fcc93ed94290426411a6c86c1, type: 3}
   _gameOverMenuPrefab: {fileID: 8262157016204405392, guid: 84d8fc1b203eda14d862cad056019ae0, type: 3}
+  _leaderboardMenuPrefab: {fileID: 7276955215153153936, guid: 7889b647cf43f2b4f87d75b6e1b2bbc9, type: 3}
   _menuParent: {fileID: 0}
 --- !u!1 &638632073
 GameObject:
@@ -347,6 +348,7 @@ Transform:
   m_Children:
   - {fileID: 1588850044}
   - {fileID: 310712191}
+  - {fileID: 2062495631}
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -433,3 +435,48 @@ Transform:
   m_Father: {fileID: 978823457}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &2062495630
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2062495631}
+  - component: {fileID: 2062495632}
+  m_Layer: 0
+  m_Name: PlayFabManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2062495631
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2062495630}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1603924324}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2062495632
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2062495630}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d5731ca18e2863547911c8ef8d60bfc9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rowPrefab: {fileID: 8884867625331358853, guid: 9c2b59e76f9df7e4daefa41754f92ef5, type: 3}
+  rowsParent: {fileID: 0}

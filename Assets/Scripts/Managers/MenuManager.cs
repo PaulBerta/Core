@@ -10,6 +10,7 @@ namespace LevelManagement
         [SerializeField] private Menu _settingsMenuPrefab;
         [SerializeField] private Menu _pauseMenuPrefab;
         [SerializeField] private Menu _gameOverMenuPrefab;
+        [SerializeField] private Menu _leaderboardMenuPrefab;
 
         [SerializeField] private Transform _menuParent;
 
@@ -41,7 +42,7 @@ namespace LevelManagement
 
             DontDestroyOnLoad(_menuParent.gameObject);
 
-            Menu[] menuPrefabs = { _mainMenuPrefab, _settingsMenuPrefab, _pauseMenuPrefab, _gameOverMenuPrefab };
+            Menu[] menuPrefabs = { _mainMenuPrefab, _settingsMenuPrefab, _pauseMenuPrefab, _gameOverMenuPrefab, _leaderboardMenuPrefab };
             foreach (Menu prefab in menuPrefabs)
             {
                 if (prefab != null)
