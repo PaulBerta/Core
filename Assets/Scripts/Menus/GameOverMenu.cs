@@ -11,7 +11,7 @@ namespace LevelManagement
         [SerializeField] private FloatScriptableObject _scoreSO;
         [SerializeField] private FloatScriptableObject _highScoreSO;
         [SerializeField] private FloatScriptableObject _timeElapsedSO;
-        public void OnRestartPressed() 
+        public void OnRestartPressed()
         {
             Time.timeScale = 1;
             MenuManager.Instance.CloseAllActiveMenus();
@@ -32,7 +32,7 @@ namespace LevelManagement
             MainMenu.Open();
         }
 
-        public void OnQuitPressed() 
+        public void OnQuitPressed()
         {
             Application.Quit();
         }
@@ -42,7 +42,7 @@ namespace LevelManagement
             _scoreText.text = _scoreSO.Value.ToString("#0.0");
         }
 
-        public void UpdateHighScore() 
+        public void UpdateHighScore()
         {
             _highScoreText.text = _highScoreSO.Value.ToString("#0.0");
         }

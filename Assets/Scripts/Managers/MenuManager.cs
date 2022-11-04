@@ -1,6 +1,5 @@
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 
 namespace LevelManagement
 {
@@ -43,11 +42,13 @@ namespace LevelManagement
             DontDestroyOnLoad(_menuParent.gameObject);
 
             Menu[] menuPrefabs = { _mainMenuPrefab, _settingsMenuPrefab, _pauseMenuPrefab, _gameOverMenuPrefab, _leaderboardMenuPrefab };
+
             foreach (Menu prefab in menuPrefabs)
             {
                 if (prefab != null)
                 {
                     Menu menuInstance = Instantiate(prefab, _menuParent);
+
                     if (prefab != _mainMenuPrefab)
                     {
                         menuInstance.gameObject.SetActive(false);
@@ -58,7 +59,6 @@ namespace LevelManagement
                     }
                 }
             }
-
         }
 
         public void OpenMenu(Menu menuInstance)

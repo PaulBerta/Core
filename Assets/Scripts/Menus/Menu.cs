@@ -25,7 +25,7 @@ namespace LevelManagement
             _instance = null;
         }
 
-        public static void Open() 
+        public static void Open()
         {
             if (MenuManager.Instance != null && Instance != null)
             {

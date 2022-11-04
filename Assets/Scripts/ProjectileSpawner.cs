@@ -4,14 +4,14 @@ using UnityEngine;
 
 public class ProjectileSpawner : MonoBehaviour
 {
-    [SerializeField] private GameObject _projectile;
+    [SerializeField] private GameObject[] _projectiles;
 
     [SerializeField] private FloatScriptableObject _scoreSO;
     [SerializeField] private FloatScriptableObject _timeElapsedSO;
 
     private GameObject _core;
     private const int _numberOfAngles = 6;
-    private const float _spawnRadius = 5.5f;
+    private const float _spawnRadius = 9.5f;
     
     
     void Start()
@@ -27,7 +27,7 @@ public class ProjectileSpawner : MonoBehaviour
     void SpawnObjectAroundAnotherObject(GameObject spawnedObject,GameObject objectToSpawnAround,int numberOfAngles , float spawnRadius)
     {
         var spawnLocation = CalculateSpawningPosition(objectToSpawnAround, numberOfAngles, spawnRadius);
-        Instantiate(spawnedObject, spawnLocation, spawnedObject.transform.rotation);
+        Instantiate(spawnedObject, spawnLocation, Quaternion.Euler(new Vector3(spawnedObject.transform.rotation.x, spawnedObject.transform.rotation.y, Random.Range(0, 360))));
     }
 
     private int _previousRandom;
@@ -51,12 +51,13 @@ public class ProjectileSpawner : MonoBehaviour
 
     private IEnumerator SpawnDelayTimer()
     {
+        
         while (GameManager.Instance.isGameActive)
         {
             var movementDelay = CalculateSpawnDelay();
             yield return new WaitForSeconds(movementDelay);
-
-            SpawnObjectAroundAnotherObject(_projectile, _core, _numberOfAngles, _spawnRadius);
+            int index = Random.Range(0, _projectiles.Length);
+            SpawnObjectAroundAnotherObject(_projectiles[index], _core, _numberOfAngles, _spawnRadius);
         }
     }
 

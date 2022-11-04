@@ -9,10 +9,11 @@ namespace LevelManagement
         public void OnResumePressed()
         {
             Time.timeScale = 1;
+            GameManager.Instance.isGamePaused = false;
             MenuManager.Instance.CloseAllActiveMenus();
         }
 
-        public void OnRestartPressed() 
+        public void OnRestartPressed()
         {
             Time.timeScale = 1;
             MenuManager.Instance.CloseAllActiveMenus();
@@ -23,17 +24,15 @@ namespace LevelManagement
 
         public void OnSettingsPressed()
         {
-            Time.timeScale = 1;
             SettingsMenu.Open();
         }
 
         public void OnMainMenuPressed()
         {
-            Time.timeScale = 1;
             MainMenu.Open();
         }
 
-        public void OnQuitPressed() 
+        public void OnQuitPressed()
         {
             Application.Quit();
         }
